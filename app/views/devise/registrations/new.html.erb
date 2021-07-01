@@ -4,23 +4,22 @@
       <%= image_tag("login/loopcommerce@3x.png", :class => "Loopcommerce") %>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
         
         <div class="field-email">
           <%= f.label :email, "Email", :class => "label-email" %>
-          <label class="required-email">(required)</label>
+          <label class="required-email form-label">(required)</label>
         </div>
         <%= f.email_field :email, placeholder: "Type your email", :class => "Rectangle-6" %>
 
         <div class="field-name">
           <%= f.label :name , "First Name", :class => "label-email" %>
-          <label class="required-name">(required)</label>
+          <label class="required-name form-label">(required)</label>
         </div>
         <%= f.text_field :name, placeholder: "Type your first name", :class => "Rectangle-6" %>
 
         <div class="field-surname">
           <%= f.label :surname, "Last Name", :class => "label-email" %>
-          <label class="required-surname">(required)</label>
+          <label class="required-surname form-label">(required)</label>
         </div>
         <%= f.text_field :surname, placeholder: "Type your last name", :class => "Rectangle-6" %>
 
@@ -32,7 +31,7 @@
         
         <div class="field-password">
           <%= f.label :password, "Password", :class => "label-email"%>
-          <label class="required-password">(minimum 6 characters)</label>
+          <label class="required-password form-label">(minimum 6 characters)</label>
         </div>
         <%= f.password_field :password, placeholder: "Type your password", :class => "Rectangle-6"  %>
 
