@@ -1,32 +1,46 @@
-<div class="small-container center-block">
+<div class="login-grey-background">
+    <div class="login-white-container-register">
+      <%= image_tag("login/logo-loopcommerce@3x.png", :class => "logo-loopcommerce") %>
+      <%= image_tag("login/loopcommerce@3x.png", :class => "Loopcommerce") %>
 
-<h2>Crear cuenta</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        
+        <div class="field-email">
+          <%= f.label :email, "Email", :class => "label-email" %>
+          <label class="required-email form-label">(required)</label>
+        </div>
+        <%= f.email_field :email, placeholder: "Type your email", :class => "Rectangle-6" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field-name">
+          <%= f.label :name , "First Name", :class => "label-email" %>
+          <label class="required-name form-label">(required)</label>
+        </div>
+        <%= f.text_field :name, placeholder: "Type your first name", :class => "Rectangle-6" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="field-surname">
+          <%= f.label :surname, "Last Name", :class => "label-email" %>
+          <label class="required-surname form-label">(required)</label>
+        </div>
+        <%= f.text_field :surname, placeholder: "Type your last name", :class => "Rectangle-6" %>
+
+        <%= f.label :gender, "Gender", :class => "label-email" %>
+        <%= f.select(:gender, options_for_select([['Male', 'Male'], ['Female', 'Female']]), {:prompt => 'Select your gender' }, { class: 'select-gender' }) %>
+
+        <%= f.label :address, "Address", :class => "label-email" %>
+        <%= f.text_field :address, placeholder: "Type your address", :class => "Rectangle-6" %>
+        
+        <div class="field-password">
+          <%= f.label :password, "Password", :class => "label-email"%>
+          <label class="required-password form-label">(minimum 6 characters)</label>
+        </div>
+        <%= f.password_field :password, placeholder: "Type your password", :class => "Rectangle-6"  %>
+
+      <div class="actions">
+        <%= f.submit "SIGN UP", class:"btn-login-background" %>
+      </div>
+    <% end %>
   </div>
+  <b class="dont-have-account">Already have an account? <a class="text-style-1" href="/users/sign_in"> Sign in</a></b>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
 </div>
