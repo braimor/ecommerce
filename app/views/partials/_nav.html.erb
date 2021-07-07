@@ -1,23 +1,36 @@
-<nav class="nav bg-light padding">
-    <li class="nav-item">
-        <%= link_to "Inicio", root_path, class:"nav-link" %>
-    </li>
-    <li class="nav-item">
-        <%= link_to "Articulos", articles_path, class:"nav-link" %>
-    </li>
-    <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to "Escribir", new_article_path, class:"nav-link" %>
+<div class="header">
+</div>
+  <nav class="navbar">
+
+      <li class="nav-item" style="list-style-type: none;">
+          <%= link_to image_tag("logoheader3x.png", class:"nav-link logo-header") %>
       </li>
-        <li class="nav-item">
-          <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class:"nav-link" %>
+
+      <li class="nav-item" style="list-style-type: none;">
+          <%= text_field_tag(:search, params[:search], placeholder: "Search", :class =>"searchbar") %>
+          <%= image_submit_tag("icon-sarch@3x.png", class: "btn search-icon") %>
       </li>
-    <% else %>
-        <li class="nav-item">
-          <%= link_to "Iniciar sesion", new_user_session_path, class:"nav-link" %>
+
+      <% if user_signed_in? %>
+        <li class="nav-item" style="list-style-type: none;">
+          <%= link_to "Escribir", new_article_path, class:"nav-link" %>
         </li>
-         <li class="nav-item">
-          <%= link_to "Registro", new_user_registration_path, class:"nav-link" %>
-         </li>
-    <%end%>
-</nav>
+          <li class="nav-item" style="list-style-type: none;">
+            <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class:"nav-link" %>
+        </li>
+      <% else %>
+          <li class="nav-item" style="list-style-type: none;">
+            <%= link_to "Login", new_user_session_path, class:"btn btn-primary-login" %>
+          </li>
+          <li class="nav-item" style="list-style-type: none;">
+            <%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary-sign-up" %>
+          </li>
+          <li class="nav-item" style="list-style-type: none;">
+            <div class= "btn btn-primary-my-cart"
+              <%= link_to "My Cart", new_user_registration_path %>
+              <p class="number">4</p>
+            </div>
+          </li>
+      <%end%>
+
+  </nav>
