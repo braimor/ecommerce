@@ -5,6 +5,105 @@
     padding: 63px 480px;
     background-color: #f7f7f7;
 }
+.reasonable-prices{
+    width: 330px;
+    height: 130px;
+    object-fit: contain;
+}
+.card-reasonable-prices{
+  width: 324px;
+  height: 130px;
+  margin: 0px 0px 0px 140px;
+  padding: 20px 17px 20px 20px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.card-customer-support{
+    width: 324px;
+    height: 130px;
+    margin: -130px -2px -3px 480px;
+    padding: 20px 17px 20px 20px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+.card-express-delivery{
+    width: 324px;
+    height: 130px;
+    padding: 20px 17px 20px 20px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    margin-top: -130px;
+    margin-left: 819px;
+}
+.money-icon{
+    width: 10px;
+    height: 18px;
+}
+.delivery-icon{
+    width: 16px;
+    height: 13px;
+}
+.call-icon{
+    width: 15px;
+    height: 15px;
+}
+.money-icon-container{
+ width: 48px;
+  height: 48px;
+  margin: 7px 16px 34px -1px;
+  padding: 11px 20px 1px 19px;
+  border-radius: 50%;
+  background-color: #feeaea;
+}
+.call-icon-container{
+    width: 48px;
+     height: 48px;
+     margin: 7px 16px 34px -1px;
+     padding: 13px 16px 0px 17px;
+     border-radius: 50%;
+     background-color: #f1f8ff;
+   }
+   .delivery-icon-container{
+    width: 48px;
+     height: 48px;
+     margin: 7px 16px 34px -1px;
+     padding: 13px 16px 0px 17px;
+     border-radius: 50%;
+     background-color: #e5f7e7;
+   }
+.reasonable-prices-title{
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.1px;
+    margin: -85px 0px 2px 67px;
+    color: #1c1c1c;
+}
+.reasonable-prices-text {
+    font-family: Lato;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: -0.2px;
+  color: #545454;
+  margin: 0px 0px 0px 67px;
+}
+.banner-2{
+    width: 1003px;
+    height: 238px;
+    margin: 33px 140px 23px;
+    object-fit: contain;
+}
+body{
+    background-color: #f7f7f7;
+    margin: 0; 
+    height: 100%; 
+    overflow-x: hidden;
+}
 .login-white-container {
     width: 350px;
     height: 488px;
