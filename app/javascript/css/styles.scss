@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;600&display=swap');
 
 .login-grey-background {
     padding: 63px 480px;
@@ -268,6 +269,96 @@ select {
 
 
 //
+.btn{
+    border-radius: 6px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.1px;
+    font-family: Inter;
+}
+.btn-primary-login {
+    width: 90px;
+    height: 38px;
+    padding: 8px 10px;
+    background-color: #007bff;  
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 7px;
+    margin-left: 70px;
+}
+
+.btn-primary-sign-up {
+    width: 90px;
+    height: 38px;
+    margin: 1px 109px -6px -9px;
+    padding: 8px 10px;
+    border: solid 1px #007bff;
+    background-color: #ffffff; 
+    color: #007bff;
+    font-size: 15px;
+}
+
+.btn-primary-my-cart {
+  width: 120px;
+  height: 38px;
+  margin: 8px 312px 0 -107px;
+  padding: 9px 1px 5px 15px;
+  border: solid 1px #e4e4e4;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #363636;
+  display: inline-flex;
+}
+.number{
+    background-color: #ff9017;
+    padding: 1px 6.5px 20px 5.5px;
+    border-radius: 6px;
+    color: white;  
+    font-size: 13px;
+    margin-left: 16px;
+}
+.logo-header{
+    width: 186px;
+    height: 67px;
+    object-fit: contain;
+    margin-left: 135px;
+}
+.searchbar{
+    width: 317px;
+    height: 35px;
+    margin: 8px 9px 0px 20px;
+    padding: 7px 64px 6px 13px;
+    border: solid 1px #e4e4e4;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+.search-icon{
+    width: 35px;
+    height: 35px;
+    margin: -8px -14px -5px -18px;
+    padding: 10.4px 10px 10.6px;
+    background-color: #007bff;
+    border-radius: 2px 7px 7px 2px;
+}
+body{
+    background-color: #f7f7f7;
+    margin: 0; 
+    height: 100%; 
+    overflow-x: hidden;
+}
+
+.navbar{
+    width: 1440px;
+    height: 86px;
+    background-color: #ffffff;
+}
+.header{
+    width: 1440px;
+    height: 9px;
+    background-color: #3167eb;
+}
 
 .small-container{
     width: 100%;
@@ -279,9 +370,6 @@ select {
 }
 .center-block{
     margin:0 auto;
-}
-.padding {
-    padding: 10px 15px;
 }
 
 .margin-top{
