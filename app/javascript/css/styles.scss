@@ -395,3 +395,179 @@ body{
         margin-right: 0.5em;
     }
 }
+
+//
+
+.footer-clean {
+    background-color:#efefef;
+    color:#4b4c4d;
+    bottom: 0;
+    height: 310px;
+    width: 100%;
+  }
+  
+  .footer-clean h3 {
+    margin-top:0;
+    margin-bottom:10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.1px;
+  }
+  .footer-clean h4 {
+    font-family: 'Inter', sans-serif;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.1px;
+    color: #969696;
+    display: inline-block;
+  }
+  .container-footer-uno{
+    margin-left: 210px;
+  }
+  .container-footer-dos{
+    margin-left: 10px;
+  }
+  .info{
+      margin-left: 30px;
+  }
+  .american-express-margin{
+      margin-left: 60px;
+  }
+
+  
+  .footer-clean ul {
+    padding:0;
+    list-style:none;
+    margin-bottom: 5px;
+  }
+
+  .container-footer{
+      margin-top: 33px;
+  }
+  
+  .footer-clean ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.2px;
+    color: #545454;
+  }
+  
+  .footer-clean ul a:hover {
+    opacity:1;
+  }
+
+  .footer-clean .item > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin-left:10px;
+    color:inherit;
+    opacity:0.75;
+  }
+  .social{
+      margin-left: 5px;
+      margin-top: 33px;
+  }
+  
+  .footer-clean .item > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-clean .copyright {
+    margin-top:14px;
+    margin-bottom:0;
+    font-size:13px;
+    opacity:0.6;
+  }
+
+  .brands{
+      margin-left: 130px;
+      margin-top: 33px;
+  }
+  .icon-facebook{
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+  }
+  .icon-twitter{
+    width: 15px;
+    height: 12.2px;
+    object-fit: contain;
+  }
+  .icon-youtube{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+
+  }
+  .company{
+    margin-left: -44px;
+    margin-top: 33px;
+
+  }
+  .help{
+      margin-left: -20px;
+      margin-top: 33px;
+
+  }
+  .hr-footer{
+    height:2px;
+    width: 877px;
+    background-color: #e4e4e4;
+    margin-left: 21px;
+    margin-top: 50px;
+  }
+  .icon-footer{
+    width: 41px;
+    height: 25px;
+    border-radius: 6px;
+    border: solid 1px #e4e4e4;
+    background-color: #ffffff;  
+    display: inline-block;
+  }
+  .icon-footer-pay-methods{
+    object-fit: contain;
+    margin-bottom: 5px;
+    margin-left: 3px;
+  }
+  .icon-american-express{
+    width: 33px;
+    height: 10px;  
+  }
+  .icon-mastercard{
+    width: 35.2px;
+    height: 11px;  
+  }
+  .icon-paypal{
+    width: 34.2px;
+    height: 13px;  
+  }
+  .icon-visa{
+    width: 32.2px;
+    height: 8px;  
+  }
+  .under-hr-footer{
+      margin-inline:auto;
+      margin-top: 16px;
+      display: flex;
+  }
