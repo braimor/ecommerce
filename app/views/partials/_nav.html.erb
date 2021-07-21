@@ -12,12 +12,22 @@
       </li>
 
       <% if user_signed_in? %>
-        <li class="nav-item" style="list-style-type: none;">
-          <%= link_to "Escribir", new_article_path, class:"nav-link" %>
-        </li>
           <li class="nav-item" style="list-style-type: none;">
-            <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class:"nav-link" %>
-        </li>
+            <div class= "btn btn-primary-my-cart"
+              <%= link_to "My Cart", new_user_registration_path %>
+              <p class="number">4</p>
+            </div>
+          </li>
+          <div id="header">
+            <ul class="nav">
+              <li><%= link_to image_tag("group-3@3x.png", class:"icon-menu") %><p class="account">My account</a>
+                <ul class="menu-nav">
+                  <li class="element-menu element-menu-line"><%= link_to "My orders", destroy_user_session_path, method: :delete %></li>
+                  <li class="element-menu"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
       <% else %>
           <li class="nav-item" style="list-style-type: none;">
             <%= link_to "Login", new_user_session_path, class:"btn btn-primary-login" %>
