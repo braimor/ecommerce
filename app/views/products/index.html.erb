@@ -1,0 +1,15 @@
+<p class="text-arrivals">New Arrivals</p>
+<div class="container-products">
+    <% @products.each do |product| %>
+            <div class="products-home">
+                <%= image_tag(url_for(product.image), :class => "img-products") %>
+                <div class="line-product"></div>
+                <p class="title-products font-styles-products"><%= label_tag (product.name)%></p>
+                <p class="price-products">$<%= label_tag (product.price)%></p>
+                <%= link_to "ADD TO CART", new_user_session_path, class:"btn btn-primary-login add-to-cart-button" %>
+            </div>
+    <%end%>
+</div>
+<div class="pagy">
+    <%== pagy_bootstrap_nav(@pagy) %>
+</div>
