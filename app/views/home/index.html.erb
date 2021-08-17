@@ -22,18 +22,6 @@
     <p class="reasonable-prices-title">Express Delivery</p>
     <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
 </div>
-<p class="text-arrivals">New Arrivals</p>
-<div class="container-products">
-    <% Product.all.each do |product| %>
-            <div class="products-home">
-                <%= image_tag (rails_blob_url(product.image)), :class => "img-products" %>
-                <div class="line-product"></div>
-                <p class="title-products font-styles-products"><%= label_tag (product.name)%></p>
-                <p class="price-products">$<%= label_tag (product.price)%></p>
-                <%= link_to "ADD TO CART", new_user_session_path, class:"btn btn-primary-login add-to-cart-button" %>
-            </div>
-    <%end%>
- </div>
-
+<%= render template: "products/index" %>
 <%= render "partials/footer" %>
 <%=yield %>
