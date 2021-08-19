@@ -1,27 +1,31 @@
-<div class="banner">
-    <%= image_tag("banner-2@3x.png", :class => "banner-2") %>    
-</div>
-<div class="card-reasonable-prices">
-    <div class="money-icon-container">
-        <%= image_tag("money-icon.png", :class => "money-icon") %>    
+<div class="overflow">
+    <div class="banner">
+        <%= image_tag("banner-2@3x.png", :class => "banner-2") %>    
     </div>
-    <p class="reasonable-prices-title">Reasonable Prices</p>
-    <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
-</div>
-<div class="card-customer-support">
-    <div class="call-icon-container">
-        <%= image_tag("call-icon.png", :class => "call-icon") %>    
+    <div class="container-cards-home">
+    <div class="card-reasonable-prices">
+        <div class="money-icon-container">
+            <%= image_tag("money-icon.png", :class => "money-icon") %>    
+        </div>
+        <p class="reasonable-prices-title">Reasonable Prices</p>
+        <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
     </div>
-    <p class="reasonable-prices-title">Customer Support</p>
-    <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
-</div>
-<div class="card-express-delivery">
-    <div class="delivery-icon-container">
-        <%= image_tag("delivery-icon.png", :class => "delivery-icon") %>    
+    <div class="card-reasonable-prices card-customer-support">
+        <div class="call-icon-container">
+            <%= image_tag("call-icon.png", :class => "call-icon") %>    
+        </div>
+        <p class="reasonable-prices-title">Customer Support</p>
+        <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
     </div>
-    <p class="reasonable-prices-title">Express Delivery</p>
-    <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
+    <div class="card-reasonable-prices">
+        <div class="delivery-icon-container">
+            <%= image_tag("delivery-icon.png", :class => "delivery-icon") %>    
+        </div>
+        <p class="reasonable-prices-title">Express Delivery</p>
+        <p class="reasonable-prices-text">Have you ever finally just gave in to the temptation and read your horoscope.</p>
+    </div>
+    <%= render template: "products/index" %>
+    <%= render "partials/footer" %>
+    <%=yield %>
+    </div>
 </div>
-<%= render template: "products/index" %>
-<%= render "partials/footer" %>
-<%=yield %>
