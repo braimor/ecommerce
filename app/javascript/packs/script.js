@@ -1,5 +1,6 @@
 document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
 var valueCount;
+
 document.querySelector(".plus-btn").addEventListener("click", function(){
   valueCount = document.getElementById("quantity").value;
   valueCount++;
@@ -9,6 +10,7 @@ document.querySelector(".plus-btn").addEventListener("click", function(){
     document.querySelector(".minus-btn").classList.remove("disabled");
   }
 })
+
 document.querySelector(".minus-btn").addEventListener("click", function(){
   valueCount = document.getElementById("quantity").value;
   valueCount--;
