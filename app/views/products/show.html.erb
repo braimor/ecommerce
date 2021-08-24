@@ -1,1 +1,27 @@
-<h3>hola</h3>
+<div class="card-product-detail">
+    <div class="card-container-one">
+        <%= image_tag(url_for(@product.image), :class => "card-product-detail-image")%>
+    </div>
+    <div class="card-container-two">
+        <p class= "card-product-detail-title"><%=@product.name%></p>
+        <p class= "card-product-detail-price">$<%=@product.price%></p><p class="per-unit-card-product">/ per unit</p>
+        <p class="card-product-text">Safely that been the to win of pane, its the later thoroughly, all it the he only the of slid choose flows the instead in heard them.</p>
+        <p class="card-product-quantity">Quantity</p>
+        <div class="quantity">
+            <button class="btn minus-btn disabled" type="button">-</button>
+            <input type="text" id="quantity" value="1">
+            <button class="btn plus-btn" type="button">+</button>
+        </div>
+          <li class="nav-item" style="list-style-type: none;">
+            <%= link_to "Buy Now", new_user_registration_path, class:"btn btn-primary-login btn-buy-now" %>
+          </li>
+          <li class="nav-item" style="list-style-type: none;">
+          <li class="nav-item" style="list-style-type: none;">
+            <%= link_to "Add to Cart", new_user_session_path, class:"btn btn-primary-sign-up btn-add-to-cart" %>
+            <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
+          </li>
+
+    </div>
+</div>
+<%= javascript_pack_tag 'script' %>
+<%= render "partials/footer" %>
