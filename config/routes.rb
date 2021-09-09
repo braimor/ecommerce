@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :line_items
-  resources :carts
+  resources :line_items, only: [:new, :create]
+  resources :carts, only: [:new, :create, :update]
   resources :products
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
