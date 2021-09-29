@@ -5,10 +5,6 @@ class LineItem < ApplicationRecord
   validates :total, presence: true
 
   def total_value
-    total = 0
-    product.each do |product|
-      total += product.price * quantity
-    end
-    total
+    total = product.price * quantity
   end
 end
