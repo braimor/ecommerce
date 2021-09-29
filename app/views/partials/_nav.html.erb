@@ -3,12 +3,10 @@
       <li class="nav-item" style="list-style-type: none;">
           <%= link_to image_tag("logoheader3x.png", class:"nav-link logo-header"), root_path %>
       </li>
-
-      <li class="nav-item" style="list-style-type: none;">
-          <%= text_field_tag(:search, params[:search], placeholder: "Search", :class =>"searchbar") %>
-          <%= image_submit_tag("icon-sarch@3x.png", class: "btn search-icon") %>
-      </li>
-
+        <div class="nav-item none-display-searchbar" style="list-style-type: none;">
+            <%= text_field_tag(:search, params[:search], placeholder: "Search", :class =>"searchbar") %>
+            <%= image_submit_tag("icon-sarch@3x.png", class: "btn search-icon") %>
+        </div>
       <% if user_signed_in? %>
           <li class="nav-item" style="list-style-type: none;">
             <div class= "btn btn-primary-my-cart"
@@ -39,8 +37,8 @@
               <%= link_to "My Cart", new_user_registration_path %>
               <p class="number">0</p>
             </div>
+          </li>
         <%end%>
-
     </nav>
     <div class="topnav">
       <div class="container-logo-hamburger">

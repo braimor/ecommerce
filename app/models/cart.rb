@@ -19,4 +19,12 @@ class Cart < ApplicationRecord
         end
         total_quantity
     end
+
+    def calculate_quantity
+        total = 0
+        line_items.each do |line_item|
+            total += line_item.quantity
+        end
+        total
+    end
 end
