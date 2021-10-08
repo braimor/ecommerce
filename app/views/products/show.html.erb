@@ -1,4 +1,4 @@
-<div class="card-product-detail">
+  <div class="card-product-detail">
     <div class="card-container-one">
         <%= image_tag(url_for(@product.image), :class => "card-product-detail-image")%>
     </div>
@@ -19,23 +19,41 @@
                   <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
                 </li>
               </div>
+              <li class="nav-item" style="list-style-type: none;">
+                <%= link_to "Buy Now", new_user_session_path, class:"btn btn-primary-login btn-buy-now" %>
+              </li>
             <% end %>
         <% else %>
-              <%= form_for LineItem.new(product: @product), url: line_items_path(product_id: @product), method: :post do |f| %>
-                <div class="quantity">
-                  <button class="btn minus-btn" type="button">-</button>
-                  <%= f.text_field :quantity, value: 0, class: "quantity-input" %>
-                  <button class="btn plus-btn" type="button">+</button>
+            <% if current_user %>
+              <%= form_for LineItem.new(product: @product), url: line_items_path, method: :post do |f| %>
+                  <div class="quantity">
+                    <button class="btn minus-btn" type="button">-</button>
+                    <%= f.text_field :quantity, value: 0, class: "quantity-input" %>
+                    <button class="btn plus-btn" type="button">+</button>
+                    <li class="nav-item" style="list-style-type: none;">
+                      <%= f.submit "Add to Cart", class: "btn btn-add-to-cart" %>
+                      <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
+                    </li>
+                  </div>
                   <li class="nav-item" style="list-style-type: none;">
-                    <%= f.submit "Add to Cart", class: "btn btn-add-to-cart" %>
-                    <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
+                    <%= link_to "Buy Now", new_user_session_path, class:"btn btn-primary-login btn-buy-now" %>
                   </li>
-                </div>
-             <% end %>
+              <% end %>
+            <% else %>
+                  <div class="quantity">
+                    <button class="btn minus-btn" type="button">-</button>
+                    <%= text_field_tag(:line_item_quantity, "1", class: "quantity-input") %>
+                    <button class="btn plus-btn" type="button">+</button>
+                    <li class="nav-item" style="list-style-type: none;">
+                      <%= link_to "Add to Cart", new_user_session_path, class:"btn btn-add-to-cart" %>
+                      <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
+                    </li>
+                  </div>
+                  <li class="nav-item" style="list-style-type: none;">
+                    <%= link_to "Buy Now", new_user_session_path, class:"btn btn-primary-login btn-buy-now" %>
+                  </li>
+            <% end %>
         <% end %>
-          <li class="nav-item" style="list-style-type: none;">
-            <%= link_to "Buy Now", new_user_registration_path, class:"btn btn-primary-login btn-buy-now" %>
-          </li>
           <li class="nav-item" style="list-style-type: none;">
 
     </div>

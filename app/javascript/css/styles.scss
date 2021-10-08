@@ -900,7 +900,7 @@ li ul {
   background-color: #ffffff;
 }
 .btn-buy-now{
-  margin-top: 19px;
+  margin-top: 17px;
   display: inline-block;
   margin-left: 0;
 }
@@ -1087,6 +1087,9 @@ li ul {
     color: #363636;
     display: inline-flex;
   }
+  .my-cart {
+    margin-left: -33%;
+  }
   .btn-buy-now{
     margin-top: 17px;
     display: inline-block;
@@ -1151,7 +1154,7 @@ li ul {
   }
 }
   .btn-add-to-cart{
-    padding-right: 40px;
+    padding-right: 39px;
     height: 38px;
     display: inline-block;
     border: solid 1px #007bff;
