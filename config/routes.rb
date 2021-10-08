@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :line_items, only: [:new, :create]
+  resources :line_items, only: [:new, :create, :update]
   resources :carts, only: [:new, :create, :update]
   resources :products
   devise_for :users

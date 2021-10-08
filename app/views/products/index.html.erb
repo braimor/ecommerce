@@ -6,8 +6,8 @@
                 <%= image_tag(url_for(product.image), :class => "img-products") %>
                 <div class="line-product"></div>
                 <p class="title-products font-styles-products"><%= label_tag (product.name)%></p>
-                <p class="price-products">$<%= label_tag (product.price)%></p>
-                <%= link_to "ADD TO CART", new_user_session_path, class:"btn btn-primary-login add-to-cart-button" %>
+                <p class="price-products"><%= number_to_currency(product.price)%></p>
+                <%= link_to "ADD TO CART", line_items_path(product_id: product), class:"btn btn-primary-login add-to-cart-button", method: :post %>
             </div>
         <% end %>
     <%end%>

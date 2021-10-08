@@ -7,19 +7,36 @@
         <p class= "card-product-detail-price">$<%=@product.price%></p><p class="per-unit-card-product">/ per unit</p>
         <p class="card-product-text">Safely that been the to win of pane, its the later thoroughly, all it the he only the of slid choose flows the instead in heard them.</p>
         <p class="card-product-quantity">Quantity</p>
-        <div class="quantity">
-            <button class="btn minus-btn disabled" type="button">-</button>
-            <input type="text" id="quantity" value="1">
-            <button class="btn plus-btn" type="button">+</button>
-        </div>
+        
+        <% if @product_line_item %>
+            <%= form_for @product_line_item, url: line_item_path(@product_line_item), method: :put do |f| %>
+              <div class="quantity">
+                <button class="btn minus-btn" type="button">-</button>
+                <%= f.text_field :quantity, value: @product_line_item.quantity, class: "quantity-input" %>
+                <button class="btn plus-btn" type="button">+</button>
+                <li class="nav-item" style="list-style-type: none;">
+                  <%= f.submit "Add to Cart", class: "btn btn-add-to-cart" %>
+                  <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
+                </li>
+              </div>
+            <% end %>
+        <% else %>
+              <%= form_for LineItem.new(product: @product), url: line_items_path(product_id: @product), method: :post do |f| %>
+                <div class="quantity">
+                  <button class="btn minus-btn" type="button">-</button>
+                  <%= f.text_field :quantity, value: 0, class: "quantity-input" %>
+                  <button class="btn plus-btn" type="button">+</button>
+                  <li class="nav-item" style="list-style-type: none;">
+                    <%= f.submit "Add to Cart", class: "btn btn-add-to-cart" %>
+                    <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
+                  </li>
+                </div>
+             <% end %>
+        <% end %>
           <li class="nav-item" style="list-style-type: none;">
             <%= link_to "Buy Now", new_user_registration_path, class:"btn btn-primary-login btn-buy-now" %>
           </li>
           <li class="nav-item" style="list-style-type: none;">
-          <li class="nav-item" style="list-style-type: none;">
-            <%= link_to "Add to Cart", new_user_session_path, class:"btn btn-primary-sign-up btn-add-to-cart" %>
-            <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon") %>
-          </li>
 
     </div>
 </div>
