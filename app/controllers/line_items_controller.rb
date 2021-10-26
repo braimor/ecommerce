@@ -24,7 +24,7 @@ class LineItemsController < ApplicationController
 
   def update
       line_item.update!(quantity: (line_item.quantity = line_item_params[:quantity].to_i))
-      redirect_to root_path
+      redirect_to cart_path
   end
 
   private

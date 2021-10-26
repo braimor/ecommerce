@@ -9,8 +9,8 @@
       </div>
       <% if user_signed_in? %>
         <li class="nav-item" style="list-style-type: none;">
-            <div class= "btn btn-primary-my-cart"
-              <%= link_to "My Cart", new_user_registration_path %>
+            <div class= "btn btn-primary-my-cart" >
+              <%= link_to "My Cart", cart_path(current_user.cart), method: :get, class: "my-cart-text-style" %>
               <p class="number"><%= current_user.cart.calculate_quantity %></p>
             </div>
             <div class="nav-item subnav" style="list-style-type: none;">
