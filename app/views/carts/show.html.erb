@@ -1,6 +1,27 @@
-<h2>Carrito</h2>
-<ul>
-    <% @cart.line_items.each do |item| %>
-        <li><%= item.product.title %></li>
-    <% end %>
-</ul>
+<div class="cart-screen">
+    <div class="carrito-title">
+        <h2>Carrito</h2>
+    </div>
+    <div class="card-product-detail-cart">
+        <% if @cart.line_items.any? %>
+            <div class="cart-rows-container">
+                <li class="cart-rows">PRODUCTO</li>
+                <li class="cart-rows">CANTIDAD</li>
+                <li class="cart-rows">PRECIO</li>
+                <li class="cart-rows">TOTAL</li>
+            </div>
+            <div class="line_items" data-lineitems="<%= @cart.line_items.pluck(:id).join(', ') %>">
+                <% @cart.line_items.each do |item| %>
+                <% @item = item%>
+                <%= render partial: "line_items/lineitem", item: @item %>
+             <% end %>
+            </div>
+            <div class="total-cart-in-card">
+             <h1 class="total-cart-in-card"><%= number_to_currency(@cart.total) %></h1>
+            </div>
+        <% else %>
+            <%= render template: "line_items/nolineitem" %>
+        <% end %>
+    </div>
+</div>
+<%= javascript_pack_tag 'cart-counter'%>

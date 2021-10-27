@@ -1,0 +1,21 @@
+<div>
+    <li class="cart-rows-content bold-cart-row"><%= @item.name %> </li>
+    <div class="cart-rows-content">
+        <% if @item %>
+            <%= form_for @item, url: line_item_path(@item), method: :put do |f| %>
+                <div class="quantity">
+                    <button class="btn minus-btn", id="<%= @item.id %>-minus-btn" , type="button">-</button>
+                    <%= f.text_field :quantity, value: @item.quantity, class: "quantity-input", id:"#{@item.id}-quantity" %>
+                    <button class="btn plus-btn <%= @item.id %>", id="<%= @item.id %>-plus-btn", type="button">+</button>
+                    <li class="nav-item" style="list-style-type: none;">
+                        <%= f.submit "Edit Cart", class: "btn btn-edit-cart" %>
+                        <%= link_to image_tag("carrito-compras-icon.png", class:"add-to-cart-icon-edit") %>
+                    </li>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <li class="cart-rows-content bold-cart-row"><%= number_to_currency(@item.product.price) %> </li>
+    <li class="cart-rows-content-total"><%= number_to_currency(@item.total) %></li>
+    <div class="col-12 hr-cart "></div>
+</div>

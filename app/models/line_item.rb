@@ -1,10 +1,12 @@
 class LineItem < ApplicationRecord
   belongs_to :product
   belongs_to :cart
-  before_save :total_value
+  after_commit :total_value
   validates :total, presence: true
+  delegate :name, to: :product
 
   def total_value
-    total = product.price * quantity
+    self.update_column(:total, product.price * quantity)
+    cart.update_total
   end
 end
