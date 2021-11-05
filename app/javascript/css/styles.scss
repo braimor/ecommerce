@@ -904,6 +904,10 @@ li ul {
   display: inline-block;
   margin-left: 0;
 }
+.btn-buy-now-cart{
+  display: inline-block;
+  margin-left: 0;
+}
 .add-to-cart-icon {
   width: 18px;
   height: 16px;
@@ -1178,10 +1182,6 @@ li ul {
     line-height: 1.09;
     letter-spacing: 0.2px;
     color: #969696;
-    margin-right: 12%;
-    margin-left: 3%;
-    margin-bottom: 1%;
-    margin-top: 1%;
   }
   .cart-rows-content{
     width: 14%;
@@ -1200,10 +1200,10 @@ li ul {
   }
   .cart-rows-content-total{
     width: 14%;
-    margin-right: 6%;
-    margin-left: 0;
+    margin-right: -2%;
+    margin-left: -1%;
     margin-top: 2%;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 500;
     font-stretch: normal;
@@ -1211,7 +1211,8 @@ li ul {
     line-height: 1.09;
     letter-spacing: 0.2px;
     color: #000;
-    display: inline-block;  }
+    display: inline-block;
+}
   .bold-cart-row{
     font-weight: bold;
   }
@@ -1265,8 +1266,10 @@ li ul {
   margin-bottom: 5%;
 }
 .total-cart-in-card {
-  margin: 6% 58% 0%;
+  margin: 5% 6% 2% 60%;
   font-weight: bold;
+  width: 20%;
+  display: inline-block;
   font-size: 20px;
 }
 .default-image{
@@ -1303,4 +1306,166 @@ letter-spacing: -0.2px;
 color: #545454;
 text-align: initial;
 margin: 20px 0 3px 26%;
+}
+.buy-now-cart{
+  width: 113px;
+  display: inline-block;
+}
+.container-input-cart{
+  margin-top: 5%;
+}
+.container-input-uno{
+  width: 47%;
+  display: inline-block;
+  margin-left: 2.2%;
+}
+.view-order-icon {
+  width: 40px;
+  margin: 0 0px 0px 104px;
+  border-radius: 6.5px;
+  border: 1px solid gray;
+  padding: 1px 7px;
+  opacity: 0.5;
+}
+.cart-rows-id{
+  margin-right: 22%;
+  margin-left: 3%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.cart-rows-date{
+  margin-right: 22%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.cart-rows-amount{
+  margin-right: 15%;
+  margin-left: 3%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.view-order-icon:hover{
+  opacity: 1;
+}
+.cart-rows-product{
+  margin-right: 15%;
+  margin-left: 3%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.cart-rows-quantity{
+  margin-right: 11.5%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.cart-rows-price{
+  margin-right: 13.5%;
+  margin-left: 2.5%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.order-rows-content-total{
+  width: 14%;
+  margin-right: -2%;
+  margin-left: 8%;
+  margin-top: 2%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.09;
+  letter-spacing: 0.2px;
+  color: #000;
+  display: inline-block;
+}
+.my-order-cart-rows{
+  margin-right: 13%;
+  margin-left: 3%;
+  margin-bottom: 1%;
+  margin-top: 2%;
+  display: inline-block;
+}
+.address-cart-order{
+ width: 20%;
+}
+.price-cart-order{
+  width: 7%;
+}
+.name-cart-order{
+  width: 15%;
+}
+.content-my-order{
+  width: 109%;
+}
+.address-cart-row{
+  margin-left: -0.5%;
+  margin-right: 14.5%;
+}
+.quantity-cart-row{
+  margin-left: -0.5%;
+}
+.id-cart-row{
+  margin-left: 2.5%;
+}
+@media only screen and (min-width: 1400px) {
+  .banner-2 {
+    width: 90%;
+    margin: -12% 0 0;
+    object-fit: contain;
+  }
+  .carrito-title {
+    display: block;
+    margin: -10% 0 2.5% 24%;
+  }
+}
+.container-name-price-my-order{
+  display: flex;
+}
+.my-order-cart-content {
+  margin-right: 0%;
+  margin-left: 2.5%;
+  margin-bottom: 1%;
+  margin-top: 0%;
+}
+.my-orders-content-style{
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.09;
+  letter-spacing: 0.2px;
+  color: #000;
+  display: inline-block;
+}
+.cart-row-content-price-name{
+  width: 37%;
+  margin-right: 0%;
+  margin-left: 0%;
+  margin-top: 2%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.09;
+  letter-spacing: 0.2px;
+  color: #000;
+  display: inline-grid;
+}
+.container-name-price-my-order {
+  display: flex;
+  margin-top: 20px;
+}
+.container-name-my-order {
+  width: 55%;
+  margin-left: 8.5%;
+}
+.total-cart-in-card-my-order {
+  margin: 11% 0 2% 53%;
+  font-weight: bold;
+  width: 20%;
+  display: inline-block;
+  font-size: 20px;
 }

@@ -1,5 +1,4 @@
 class LineItemsController < ApplicationController
-  include CurrentCart
   before_action :set_cart, only: [:create]
 
   def new
@@ -19,12 +18,12 @@ class LineItemsController < ApplicationController
       else
         line_item = @cart.line_items.create!(product: product)
       end
-      redirect_to root_path
+      params[:type] != "Buy now" ? (redirect_to root_path) : (redirect_to new_order_path)
   end
 
   def update
       line_item.update!(quantity: (line_item.quantity = line_item_params[:quantity].to_i))
-      redirect_to cart_path
+      params[:type] != "Buy now" ? (redirect_to cart_path) : (redirect_to new_order_path)
   end
 
   private
@@ -34,7 +33,7 @@ class LineItemsController < ApplicationController
   end
 
   def line_item_params
-    params.require(:line_item).permit(:product_id, :cart_id, :quantity)
+    params.require(:line_item).permit(:product_id, :cart_id, :quantity, :type)
   end
 
 end

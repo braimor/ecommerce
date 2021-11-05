@@ -5,9 +5,9 @@
     <div class="card-product-detail-cart">
         <% if @cart.line_items.any? %>
             <div class="cart-rows-container">
-                <li class="cart-rows">PRODUCTO</li>
-                <li class="cart-rows">CANTIDAD</li>
-                <li class="cart-rows">PRECIO</li>
+                <li class="cart-rows cart-rows-product">PRODUCTO</li>
+                <li class="cart-rows cart-rows-quantity">CANTIDAD</li>
+                <li class="cart-rows cart-rows-price">PRECIO</li>
                 <li class="cart-rows">TOTAL</li>
             </div>
             <div class="line_items" data-lineitems="<%= @cart.line_items.pluck(:id).join(', ') %>">
@@ -16,10 +16,18 @@
                 <%= render partial: "line_items/lineitem", item: @item %>
              <% end %>
             </div>
+
             <div class="total-cart-in-card">
-             <h1 class="total-cart-in-card"><%= number_to_currency(@cart.total) %></h1>
+                <h1 class="total-cart-in-card"><%= number_to_currency(@cart.total) %></h1>
+            </div>
+            <div class="buy-now-cart">
+                <li class="nav-item" style="list-style-type: none;">
+                    <%= link_to "Buy Now", new_order_path, class:"btn btn-primary-login btn-buy-now-cart" %>
+                </li>
             </div>
         <% else %>
+            <p class="default-cart-title">Tu carrito está vacío</p>
+            <p class="default-cart-text">Añade productos a tu carrito para poder crear una orden de compra.</p>
             <%= render template: "line_items/nolineitem" %>
         <% end %>
     </div>

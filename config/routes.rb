@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   resources :line_items, only: [:new, :create, :update]
   resources :carts, only: [:new, :create, :update, :show]
+  resources :orders, only: [:new, :create, :index, :show]
   resources :products
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
