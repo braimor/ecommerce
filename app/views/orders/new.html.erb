@@ -1,0 +1,25 @@
+<div class="carrito-title">
+    <h2>Confirmación de orden</h2>
+</div>
+<div class="card-product-detail-cart">
+    <%= form_for @order, url: orders_path(@order), method: :post do |f| %>
+        <div class="container-input-cart">
+            <div class="container-input-uno">
+                <%= f.label :address, "Address", :class => "label-email" %>
+                <%= f.text_field :address, placeholder: "Type your address", :class => "Rectangle-6" %>
+            </div>
+            <div class="container-input-uno">
+                <%= f.label :phone, "Phone", :class => "label-email" %>
+                <%= f.text_field :phone, placeholder: "Type your phone", :class => "Rectangle-6" %>
+            </div>
+            <div class="total-cart-in-card">
+              <h1 class="total-cart-in-card"><%= number_to_currency(@cart.total) %></h1>
+            </div>
+            <div class="buy-now-cart">
+                <li class="nav-item" style="list-style-type: none;">
+                    <%= f.submit "Buy now", class: "btn btn-primary-login btn-buy-now-cart" %>
+                </li>
+            </div>
+        </div>
+    <% end %>
+</div>

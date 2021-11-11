@@ -1,0 +1,34 @@
+<div class="cart-screen">
+    <div class="carrito-title">
+        <h2>Your order</h2>
+    </div>
+    <div class="card-product-detail-cart">
+            <div class="cart-rows-container">
+                <li class="cart-rows my-order-cart-rows">ID</li>
+                <li class="cart-rows my-order-cart-rows">PHONE</li>
+                <li class="cart-rows my-order-cart-rows address-cart-row">ADDRESS</li>
+                <li class="cart-rows my-order-cart-rows">PRODUCT</li>
+                <li class="cart-rows cart-rows-action quantity-cart-row">QUANTITY</li>
+            </div>
+            <div class="line_items content-my-order">
+                    <li class="cart-rows-content bold-cart-row my-order-cart-content id-cart-row"><%= @order.id %> </li>
+                    <li class="cart-rows-content my-order-cart-content"><%= @order.phone %> </li>
+                    <li class="cart-rows-content my-order-cart-content address-cart-order"><%= @order.address %> </li>
+                <div class="cart-row-content-price-name">
+                    <% @order.order_items.each do |order| %>
+                        <div class="container-name-price-my-order">
+                            <div class="container-name-my-order">
+                                <li class="my-orders-content-style"><%= order.product.name %> </li>
+                            </div>
+                            <div class="container-price-my-order">
+                                <li class="bold-cart-row my-orders-content-style"><%= number_to_currency((order.price * order.quantity)) %> </li>
+                            </div>
+                        </div>
+                    <% end %>
+                    <div class="total-cart-in-card-my-order">
+                        <h1 class="total-cart-in-card"><%= number_to_currency(@order.total) %></h1>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

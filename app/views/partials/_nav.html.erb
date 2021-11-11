@@ -19,7 +19,7 @@
                   <p>My account</p>
                 </div>
                 <ul class="subnav-content nav">
-                  <li class="element-menu element-menu-line"><%= link_to "My orders", destroy_user_session_path, method: :delete %></li>
+                  <li class="element-menu element-menu-line"><%= link_to "My orders", orders_path(@order) %></li>
                   <li class="element-menu"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                 </ul>
             </div>
@@ -49,7 +49,7 @@
       </div>
       <% if user_signed_in? %>
         <div class="hr-hamburger" id="myLinks">
-          <a><%= link_to "My orders", destroy_user_session_path, method: :delete, class:"hamburger-menu" %></a>
+          <a><%= link_to "My orders", orders_path, method: :delete, class:"hamburger-menu" %></a>
           <a><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"hamburger-menu" %></a>
         </div>
       <% else %>

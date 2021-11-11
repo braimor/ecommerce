@@ -1,0 +1,7 @@
+<div>
+    <li class="cart-rows-content bold-cart-row"><%= @order.id %> </li>
+    <li class="cart-rows-content bold-cart-row"><%= @order.created_at.strftime("%Y-%m-%d") %> </li>
+    <li class="order-rows-content-total"><%= number_to_currency(@order.total) %></li>
+    <%= link_to image_tag("eye.png", class:"view-order-icon"), order_path(@order.id) %>
+    <div class="col-12 hr-cart "></div>
+</div>

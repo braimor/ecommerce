@@ -1,0 +1,25 @@
+<div class="cart-screen">
+    <div class="carrito-title">
+        <h2>Orders</h2>
+    </div>
+    <div class="card-product-detail-cart">
+            <div class="line_items">
+                <% if @orders.any? %>
+                    <div class="cart-rows-container">
+                        <li class="cart-rows cart-rows-id">ID</li>
+                        <li class="cart-rows cart-rows-date">DATE</li>
+                        <li class="cart-rows cart-rows-amount">AMOUNT</li>
+                        <li class="cart-rows cart-rows-action">ACTIONS</li>
+                    </div>
+                    <% @orders.each do |orders| %>
+                        <% @order = orders%>
+                        <%= render partial: "orders/order", orders: @order %>
+                    <% end %>
+                <% else %>
+                    <p class="default-cart-title">No tienes ninguna order</p>
+                    <p class="default-cart-text">Añade productos a tu carrito para poder crear una orden de compra.</p>
+                    <%= render template: "line_items/nolineitem" %>
+                <% end %>
+            </div>
+    </div>
+</div>
