@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'rexml'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'aws-sdk-s3'
@@ -32,6 +32,8 @@ gem 'pagy', '~> 3.5' # omit patch digit and use the latest if possible
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 gem 'devise'
 
@@ -53,6 +55,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do
@@ -61,6 +64,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 4.5.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

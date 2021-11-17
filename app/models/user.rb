@@ -6,8 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :articles
-  has_one_attached :avatar
   has_one :cart
   has_many :orders
   after_create :initialize_cart
