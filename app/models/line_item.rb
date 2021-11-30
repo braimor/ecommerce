@@ -5,6 +5,8 @@ class LineItem < ApplicationRecord
   validates :total, presence: true
   delegate :name, to: :product
 
+  private
+
   def total_value
     self.update_column(:total, product.price * quantity)
     cart.update_total
