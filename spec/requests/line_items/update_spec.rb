@@ -1,22 +1,41 @@
 require 'rails_helper'
 
 RSpec.describe "Update LineItems" do
-  
+      subject(:put_request) do
+        sign_in user
+        put line_item_path(line_item), params: params
+      end
+
       let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
-      let!(:line_item) { FactoryBot.create(:line_item, quantity: 2, total: 240) }
       let!(:user) { FactoryBot.create(:user) }
       let!(:cart) { FactoryBot.create(:cart, user: user) }
+      let!(:line_item) { FactoryBot.create(:line_item, product: product, cart: cart, quantity: 2, total: 240) }
       let(:params) do
           {
             line_item: {
+              product: product,
+              cart: cart,
               quantity: 3,
               total: 360
             }
           }
       end
-  
-      before { patch line_item_path(line_item), params: params }
+      let(:created_line_item) { LineItem.last }
       
-      it { expect(response).to have_http_status(302) }
-      it { expect(params[:line_item]).to eq(quantity: 3, total: 360) }
+      it 'updates the LineItem record' do
+        put_request
+
+        expect(params[:line_item]).to eq(
+          product: created_line_item.product,
+          cart: created_line_item.cart,
+          quantity: created_line_item.quantity,
+          total: created_line_item.total
+        ) 
+      end
+
+      it 'tests http status' do
+        put_request
+  
+        expect(response).to have_http_status(302)
+      end
   end
