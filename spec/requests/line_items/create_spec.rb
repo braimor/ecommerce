@@ -27,17 +27,6 @@ RSpec.describe "Create LineItems" do
       }.to change(LineItem, :count).by(1)
     end
 
-    it 'returns the LineItem data' do
-      post_request
-
-      expect(params[:line_item]).to eq(
-        product: created_line_item.product,
-        cart: created_line_item.cart,
-        quantity: created_line_item.quantity,
-        total: created_line_item.total
-      )
-    end
-
     it 'tests http status' do
       post_request
 

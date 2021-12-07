@@ -21,21 +21,23 @@ RSpec.describe "Update LineItems" do
           }
       end
       let(:created_line_item) { LineItem.last }
-      
+
       it 'updates the LineItem record' do
         put_request
 
-        expect(params[:line_item]).to eq(
-          product: created_line_item.product,
-          cart: created_line_item.cart,
-          quantity: created_line_item.quantity,
-          total: created_line_item.total
-        ) 
+        expect(line_item.reload.quantity).to eq(created_line_item.quantity)
+        expect(line_item.reload.total).to eq(created_line_item.total)
       end
 
       it 'tests http status' do
         put_request
   
         expect(response).to have_http_status(302)
+      end
+
+      it 'updates the LineItem record' do
+        put_request
+
+        expect(line_item.reload.quantity).to eq(created_line_item.quantity)
       end
   end
