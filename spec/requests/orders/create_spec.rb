@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Order" do
-  
-  describe "create order" do
+RSpec.describe "Create Order" do
 
     let!(:user) { FactoryBot.create(:user) }
     let(:params) do
@@ -21,5 +19,4 @@ RSpec.describe "Order" do
     end
 
     it { expect(response).to have_http_status(302) }
-  end
 end

@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "LineItems" do
-
-    describe "update line item" do
+RSpec.describe "Update LineItems" do
   
       let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
       let!(:line_item) { FactoryBot.create(:line_item, quantity: 2, total: 240) }
@@ -18,6 +16,7 @@ RSpec.describe "LineItems" do
       end
   
       before { patch line_item_path(line_item), params: params }
+      
       it { expect(response).to have_http_status(302) }
-    end
+      it { expect(params[:line_item]).to eq(quantity: 3, total: 360) }
   end

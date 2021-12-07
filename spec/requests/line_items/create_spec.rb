@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "LineItems" do
+RSpec.describe "Create LineItems" do
   
-  describe "create line item" do
-
     let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
     let!(:user) { FactoryBot.create(:user) }
     let!(:cart) { FactoryBot.create(:cart) }
@@ -24,5 +22,5 @@ RSpec.describe "LineItems" do
     end
 
     it { expect(response).to have_http_status(302) }
-  end
+    it { expect(params[:line_item]).to eq(product: product, cart: cart, quantity: 2, total: 240) }
 end

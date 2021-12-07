@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Order" do
+RSpec.describe "Index Orders" do
   
-  describe "show orders" do
-
     let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
     let!(:user) { FactoryBot.create(:user) }
     let!(:cart) { FactoryBot.create(:cart, user: user) }
@@ -23,6 +21,6 @@ RSpec.describe "Order" do
       sign_in user
       get orders_path(order)
     end
+    
     it { expect(response).to have_http_status(200) }
-  end
 end
