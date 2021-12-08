@@ -17,7 +17,6 @@ RSpec.describe "Create LineItems" do
           }
         }
     end
-    let(:created_line_item) { LineItem.last }
 
     it 'creates the LineItem record' do
       expect {
