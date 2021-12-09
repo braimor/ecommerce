@@ -3,6 +3,5 @@ FactoryBot.define do
       product
       cart
       quantity { Faker::Number.number(digits: 1) }
-      total { Faker::Number.number(digits: 1) }
     end
 end
