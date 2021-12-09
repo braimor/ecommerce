@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Index Orders" do
   
-    let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
-    let!(:user) { FactoryBot.create(:user) }
+    let(:product) { FactoryBot.create(:product, :with_image, price: 120) }
+    let(:user) { FactoryBot.create(:user) }
     let!(:cart) { FactoryBot.create(:cart, user: user) }
     let(:params) do
         {

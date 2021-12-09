@@ -6,8 +6,8 @@ RSpec.describe "Create LineItems" do
       post line_items_path(product_id: product), params: params
     end
 
-    let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
-    let!(:user) { FactoryBot.create(:user) }
+    let(:product) { FactoryBot.create(:product, :with_image, price: 120) }
+    let(:user) { FactoryBot.create(:user) }
     let(:params) do
         {
           line_item: {

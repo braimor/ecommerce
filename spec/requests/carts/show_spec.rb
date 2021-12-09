@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Show Cart" do
     subject { cart } 
 
-    let!(:user) { FactoryBot.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     let!(:cart) { user.cart }
   
     before do

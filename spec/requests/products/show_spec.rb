@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Show Products" do
   
-    let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
+    let!(:product) { FactoryBot.create(:product, :with_image, price: 120) }
 
     before { get product_path(product.id) }
     

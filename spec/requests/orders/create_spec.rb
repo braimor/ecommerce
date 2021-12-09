@@ -6,7 +6,7 @@ RSpec.describe "Create Order" do
       post orders_path(params: params)
     end
 
-    let!(:user) { FactoryBot.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     let(:params) do
     {
       order: {

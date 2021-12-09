@@ -6,8 +6,8 @@ RSpec.describe "Update LineItems" do
         put line_item_path(line_item), params: params
       end
 
-      let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
-      let!(:user) { FactoryBot.create(:user) }
+      let(:product) { FactoryBot.create(:product, :with_image, price: 120) }
+      let(:user) { FactoryBot.create(:user) }
       let!(:line_item) { FactoryBot.create(:line_item, cart: user.cart, product: product, quantity: 2) }
       let(:params) do
           {
