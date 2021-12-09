@@ -33,7 +33,6 @@ class LineItemsController < ApplicationController
   end
 
   def line_item_params
-    params.require(:line_item).permit(:product_id, :cart_id, :quantity, :type)
+    params.require(:line_item).permit(:product_id, :quantity)
   end
-
 end

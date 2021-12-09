@@ -8,15 +8,12 @@ RSpec.describe "Update LineItems" do
 
       let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
       let!(:user) { FactoryBot.create(:user) }
-      let!(:cart) { FactoryBot.create(:cart) }
-      let!(:line_item) { FactoryBot.create(:line_item, product: product, cart: cart, quantity: 2, total: 240) }
+      let!(:line_item) { FactoryBot.create(:line_item, cart: user.cart, product: product, quantity: 2) }
       let(:params) do
           {
             line_item: {
               product: product,
-              cart: cart,
-              quantity: 3,
-              total: 360
+              quantity: 3
             }
           }
       end
@@ -25,7 +22,7 @@ RSpec.describe "Update LineItems" do
         put_request
 
         expect(line_item.reload.quantity).to eq(params[:line_item][:quantity])
-        expect(line_item.reload.total).to eq(params[:line_item][:total])
+        expect(line_item.reload.total).to eq(360)
       end
 
       it 'tests http status' do

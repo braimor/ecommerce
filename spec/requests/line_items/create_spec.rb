@@ -8,20 +8,23 @@ RSpec.describe "Create LineItems" do
 
     let!(:product) { FactoryBot.create(:product, :with_image, name: 'Ipod', price: 120) }
     let!(:user) { FactoryBot.create(:user) }
-    let!(:cart) { FactoryBot.create(:cart) }
     let(:params) do
         {
           line_item: {
             quantity: 2,
-            total: 240
           }
         }
     end
+    let(:created_line_item) { LineItem.last }
 
     it 'creates the LineItem record' do
       expect {
         post_request
       }.to change(LineItem, :count).by(1)
+
+      expect(created_line_item.quantity).to eq(2)
+      expect(created_line_item.total).to eq(240)
+      expect(created_line_item.cart).to eq(user.cart)
     end
 
     it 'tests http status' do
