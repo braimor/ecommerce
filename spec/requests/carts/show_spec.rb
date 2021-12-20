@@ -18,5 +18,9 @@ RSpec.describe "Show Cart" do
       include_examples 'not signed in examples'
     end
 
-    it { expect(response).to have_http_status(200) }
+    context 'when being signed in' do
+      it 'checks the http status of the request' do
+        expect(response).to have_http_status(200)
+      end
+    end
 end

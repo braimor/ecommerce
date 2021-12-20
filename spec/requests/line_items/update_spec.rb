@@ -63,9 +63,11 @@ RSpec.describe "Update LineItems" do
         include_examples 'not signed in examples'
       end
 
-      it 'tests http status' do
-        put_request
+      context 'when being signed in' do
+        it 'checks the http status of the request' do
+          put_request
 
-        expect(response).to have_http_status(302)
+          expect(response).to have_http_status(302)
+        end
       end
   end

@@ -15,7 +15,7 @@ module ExceptionHandler
     end
 
     def render_attributes_errors(error_messages)
-        render "partials/exception", status: :bad_request
+        render "partials/_exception.html.erb", status: :bad_request
     end
   
     def render_standard_error(exception)
