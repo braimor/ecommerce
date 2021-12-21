@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
     belongs_to :user
+    validates_presence_of :phone, :address
     has_many :order_items
 
     def calculate_total

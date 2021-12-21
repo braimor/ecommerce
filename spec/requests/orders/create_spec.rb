@@ -27,9 +27,45 @@ RSpec.describe "Create Order" do
       expect(created_order.user).to eq(user)
     end
 
-    it 'tests http status' do
-      post_request
+    context 'with invalid params' do
+      let(:params) do
+        {
+          order: {
+            address: '',
+            phone: 03343432
+          }
+        }
+      end
 
-      expect(response).to have_http_status(302)
+        include_examples 'have http_status', :bad_request
+    end
+
+    context 'with invalid params' do
+      let(:params) do
+        {
+          order: {
+            address: 'Jacinto',
+            phone: ''
+          }
+        }
+      end
+
+        include_examples 'have http_status', :bad_request
+    end
+
+    context 'when not being signed in' do
+      subject(:not_signed_in) do
+        post orders_path(params: params)
+      end
+
+      include_examples 'not signed in examples'
+    end
+
+    context 'when being signed in' do
+      it 'checks the http status of the request' do
+        post_request
+      end
+
+      include_examples 'have http_status', 200
     end
 end

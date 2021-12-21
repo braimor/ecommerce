@@ -10,24 +10,56 @@ RSpec.describe "Update LineItems" do
       let(:user) { FactoryBot.create(:user) }
       let!(:line_item) { FactoryBot.create(:line_item, cart: user.cart, product: product, quantity: 2) }
       let(:params) do
-          {
-            line_item: {
-              product: product,
-              quantity: 3
-            }
+        {
+          line_item: {
+            quantity: 3
           }
+        }
       end
 
       it 'updates the LineItem record' do
         put_request
 
         expect(line_item.reload.quantity).to eq(params[:line_item][:quantity])
-        expect(line_item.reload.total).to eq(360)
       end
 
-      it 'tests http status' do
-        put_request
-  
-        expect(response).to have_http_status(302)
+      context 'with invalid params' do
+        let(:params) do
+          {
+            line_item: {
+              quantity: '',
+            }
+          }
+        end
+
+        include_examples 'have http_status', :bad_request
+      end
+
+      context 'with invalid params' do
+        let(:params) do
+          {
+            line_item: {
+              quantity: '-2',
+            }
+          }
+        end
+
+        include_examples 'have http_status', :bad_request
+      end
+
+      context 'when not being signed in' do
+        subject(:not_signed_in) do
+          put line_item_path(line_item), params: params
+        end
+
+        include_examples 'not signed in examples'
+      end
+
+      context 'when being signed in' do
+        it 'checks the http status of the request' do
+          put_request
+        end
+
+        include_examples 'have http_status', 302
       end
   end

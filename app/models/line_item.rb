@@ -1,8 +1,9 @@
 class LineItem < ApplicationRecord
   belongs_to :product
   belongs_to :cart
-  after_commit :total_value
+  after_save :total_value
   validates :total, presence: true
+  validates :quantity, numericality: { greater_than: 0 }
   delegate :name, to: :product
 
   private
