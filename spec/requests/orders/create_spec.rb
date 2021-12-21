@@ -58,23 +58,14 @@ RSpec.describe "Create Order" do
         post orders_path(params: params)
       end
 
-      let(:params) do
-        {
-          order: {
-            address: 'Jacinto',
-            phone: 03343432
-          }
-        }
-      end
-
       include_examples 'not signed in examples'
     end
 
     context 'when being signed in' do
       it 'checks the http status of the request' do
         post_request
-
-        expect(response).to have_http_status(302)
       end
+
+      include_examples 'have http_status', 200
     end
 end

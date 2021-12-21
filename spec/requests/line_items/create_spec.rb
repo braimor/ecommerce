@@ -100,23 +100,14 @@ RSpec.describe "Create LineItems" do
         post line_items_path(product_id: product), params: params
       end
 
-      let(:params) do
-        {
-          line_item: {
-            quantity: '2'
-          }
-        }
-      end
-
       include_examples 'not signed in examples'
     end
 
-    
     context 'when being signed in' do
       it 'checks the http status of the request' do
         post_request
-
-        expect(response).to have_http_status(302)
       end
+      
+      include_examples 'have http_status', 302
     end
 end

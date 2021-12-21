@@ -5,5 +5,5 @@ RSpec.describe "Show Products" do
 
     before { get product_path(product.id) }
     
-    it { expect(response).to have_http_status(200) }
+    include_examples 'have http_status', 200
 end

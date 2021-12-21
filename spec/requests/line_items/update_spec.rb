@@ -15,7 +15,7 @@ RSpec.describe "Update LineItems" do
             quantity: 3
           }
         }
-    end
+      end
 
       it 'updates the LineItem record' do
         put_request
@@ -52,22 +52,14 @@ RSpec.describe "Update LineItems" do
           put line_item_path(line_item), params: params
         end
 
-        let(:params) do
-          {
-            line_item: {
-              quantity: '2'
-            }
-          }
-        end
-
         include_examples 'not signed in examples'
       end
 
       context 'when being signed in' do
         it 'checks the http status of the request' do
           put_request
-
-          expect(response).to have_http_status(302)
         end
+
+        include_examples 'have http_status', 302
       end
   end
